@@ -1,0 +1,10 @@
+```{r}
+studentVle <- read.csv("~/Downloads/anonymisedData/studentVle.csv")
+View(studentVle)
+studentAssessment <- read.csv("~/Downloads/anonymisedData/studentAssessment.csv")
+View(studentAssessment)
+studentInfo <- read.csv("~/Downloads/anonymisedData/studentInfo.csv")
+View(studentInfo)
+StudentInfo<-studentVle%>%group_by(id_student)%>%summarise(clicksavg=mean(sum_click))
+studentInfo<-studentAssessment%>%group_by(id_student)%>%summarise(scoreavg=mean (score))
+```
